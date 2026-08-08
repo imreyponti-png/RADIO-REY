@@ -2,106 +2,166 @@
 <html lang="ro">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>RADIO REY - Live</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
 <div class="container">
 
+
+    <!-- HEADER -->
+
     <header>
 
         <div class="live-badge">
+
             <span class="live-dot"></span>
+
             LIVE
+
         </div>
 
-        <h1>🎧 RADIO REY</h1>
 
-        <p>Music • Chat • Vibe</p>
+        <h1>
+            🎧 RADIO REY
+        </h1>
+
+
+        <p>
+            Music • Chat • Vibe
+        </p>
 
     </header>
+
 
 
     <!-- RADIO -->
 
     <section class="player">
 
-        <h2>📻 Radio Live</h2>
+        <h2>
+            📻 Radio Live
+        </h2>
+
 
         <div class="now-playing">
+
 
             <div class="cover">
                 🎵
             </div>
 
+
             <div class="track-info">
 
-                <span>ACUM SE ASCULTĂ</span>
+                <span>
+                    ACUM SE ASCULTĂ
+                </span>
 
-                <strong>RADIO REY</strong>
 
-                <p>Music • Chat • Vibe</p>
+                <strong>
+                    RADIO REY
+                </strong>
+
+
+                <p>
+                    Music • Chat • Vibe
+                </p>
 
             </div>
 
         </div>
 
 
-        <!-- PLAYER OFICIAL MYRADIOSTREAM -->
+        <!-- PLAYERUL OFICIAL MYRADIOSTREAM -->
 
-        <div id="radio-player">
+        <div
+            id="radio-player"
+            style="
+                width:100%;
+                min-height:80px;
+                display:flex;
+                justify-content:center;
+                align-items:center;
+            "
+        >
 
-            <script src="https://myradiostream.com/embed/Reyponti"></script>
+            <script src="//myradiostream.com/embed/Reyponti"></script>
 
         </div>
 
     </section>
+
 
 
     <!-- CHAT -->
 
     <section class="chat">
 
-        <h2>💬 Chat Live</h2>
+        <h2>
+            💬 Chat Live
+        </h2>
+
 
         <div id="messages"></div>
 
 
         <div class="send">
 
+
             <input
                 type="text"
                 id="username"
                 placeholder="Numele tău"
-                maxlength="30">
+                maxlength="30"
+            >
+
 
             <input
                 type="text"
                 id="message"
                 placeholder="Scrie un mesaj..."
-                maxlength="300">
+                maxlength="300"
+            >
+
 
             <button id="sendBtn">
                 Trimite
             </button>
 
+
         </div>
 
     </section>
 
+
 </div>
 
 
+
+<!-- FIREBASE CHAT -->
+
 <script
     type="module"
-    src="script.js">
-</script>
+    src="script.js"
+></script>
+
 
 </body>
 
