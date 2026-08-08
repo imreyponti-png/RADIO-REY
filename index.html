@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RADIO-REY</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#121212;
+    color:white;
+}
+
+header{
+    background:#1f1f1f;
+    padding:20px;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.player{
+    background:#222;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.chat{
+    background:#222;
+    border-radius:10px;
+    height:500px;
+    display:flex;
+    flex-direction:column;
+}
+
+#messages{
+    flex:1;
+    overflow:auto;
+    padding:15px;
+}
+
+.input{
+    display:flex;
+}
+
+.input input{
+    flex:1;
+    padding:15px;
+    border:none;
+    font-size:16px;
+}
+
+.input button{
+    width:120px;
+    border:none;
+    background:#00b894;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>📻 RADIO REY</header>
+
+<div class="container">
+
+<div class="player">
+
+<h2>Ascultă Live</h2>
+
+<audio controls style="width:100%;">
+<source src="AICI_PUI_LINKUL_STREAMULUI" type="audio/mpeg">
+</audio>
+
+</div>
+
+<div class="chat">
+
+<div id="messages">
+
+<h3>💬 Chat Live</h3>
+
+<p>În curând va fi conectat la Firebase.</p>
+
+</div>
+
+<div class="input">
+
+<input id="text" placeholder="Scrie un mesaj...">
+
+<button>Trimite</button>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
