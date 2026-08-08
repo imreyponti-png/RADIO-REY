@@ -12,47 +12,51 @@
 
 <body>
 
-<header>
-    <h1>🎧 RADIO REY</h1>
-    <p>Music • Chat • Vibe</p>
-</header>
+<div class="container">
 
-<section class="player">
+    <header>
+        <h1>🎧 RADIO REY</h1>
+        <p>Music • Chat • Vibe</p>
+    </header>
 
-    <h2>Radio Live</h2>
+    <section class="player">
 
-    <audio controls autoplay>
-        <source src="http://s6.myradiostream.com:51318/" type="audio/mpeg">
-        Browserul tău nu suportă playerul audio.
-    </audio>
+        <h2>Radio Live</h2>
 
-</section>
+        <audio controls autoplay>
+            <source src="http://s6.myradiostream.com:51318/" type="audio/mpeg">
+            Browserul tău nu suportă playerul audio.
+        </audio>
 
-<section class="chat">
+    </section>
 
-    <h2>💬 Chat Live</h2>
+    <section class="chat">
 
-    <div id="messages"></div>
+        <h2>💬 Chat Live</h2>
 
-    <div class="send">
+        <div id="messages"></div>
 
-        <input
-            type="text"
-            id="username"
-            placeholder="Numele tău">
+        <div class="send">
 
-        <input
-            type="text"
-            id="message"
-            placeholder="Scrie un mesaj...">
+            <input
+                type="text"
+                id="username"
+                placeholder="Numele tău">
 
-        <button id="sendBtn">
-            Trimite
-        </button>
+            <input
+                type="text"
+                id="message"
+                placeholder="Scrie un mesaj...">
 
-    </div>
+            <button id="sendBtn">
+                Trimite
+            </button>
 
-</section>
+        </div>
+
+    </section>
+
+</div>
 
 <script type="module" src="script.js"></script>
 
