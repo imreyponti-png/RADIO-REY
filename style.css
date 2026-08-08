@@ -12,6 +12,8 @@ body {
     padding: 40px 20px;
 }
 
+/* CONTAINER PRINCIPAL */
+
 .container {
     width: 100%;
     max-width: 900px;
@@ -21,6 +23,8 @@ body {
     padding: 25px;
     box-shadow: 0 0 30px rgba(0, 229, 255, 0.12);
 }
+
+/* HEADER */
 
 header {
     text-align: center;
@@ -39,12 +43,13 @@ header p {
     font-size: 15px;
 }
 
+/* RADIO PLAYER */
+
 .player {
     margin-bottom: 30px;
 }
 
-.player h2,
-.chat h2 {
+.player h2 {
     margin-bottom: 15px;
 }
 
@@ -52,9 +57,13 @@ audio {
     width: 100%;
 }
 
-.chat {
-    width: 100%;
+/* CHAT */
+
+.chat h2 {
+    margin-bottom: 15px;
 }
+
+/* FEREASTRA MESAJELOR */
 
 #messages {
     height: 350px;
@@ -66,23 +75,60 @@ audio {
     border: 1px solid #374151;
 }
 
+/* MESAJ */
+
 .message {
     margin-bottom: 10px;
-    padding: 10px 12px;
+    padding: 11px 13px;
     background: #374151;
-    border-radius: 8px;
-    word-wrap: break-word;
+    border-radius: 10px;
+    border-left: 3px solid #00e5ff;
+    transition: 0.2s;
 }
 
-.message strong {
-    color: #00e5ff;
+.message:hover {
+    background: #414b5c;
 }
+
+/* NUME + ORA */
+
+.message-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.message-header strong {
+    color: #00e5ff;
+    font-size: 15px;
+}
+
+.message-header span {
+    color: #9ca3af;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* TEXT MESAJ */
+
+.message-text {
+    color: #f3f4f6;
+    font-size: 15px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/* ZONA DE TRIMITERE */
 
 .send {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
+/* INPUTURI */
 
 .send input {
     padding: 13px;
@@ -94,10 +140,16 @@ audio {
     outline: none;
 }
 
+.send input::placeholder {
+    color: #9ca3af;
+}
+
 .send input:focus {
     border-color: #00e5ff;
     box-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
 }
+
+/* BUTON TRIMITE */
 
 .send button {
     padding: 13px;
@@ -116,14 +168,34 @@ audio {
     transform: translateY(-1px);
 }
 
+/* BUTON DEZACTIVAT */
+
+.send button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* SCROLLBAR CHAT */
+
 #messages::-webkit-scrollbar {
     width: 7px;
+}
+
+#messages::-webkit-scrollbar-track {
+    background: #111827;
 }
 
 #messages::-webkit-scrollbar-thumb {
     background: #374151;
     border-radius: 10px;
 }
+
+#messages::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+}
+
+/* TELEFON */
 
 @media (max-width: 600px) {
 
@@ -133,18 +205,30 @@ audio {
 
     .container {
         padding: 18px;
+        border-radius: 12px;
     }
 
     header h1 {
         font-size: 30px;
     }
 
+    header p {
+        font-size: 14px;
+    }
+
     #messages {
         height: 300px;
     }
-}
-.send button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
+
+    .message-header strong {
+        font-size: 14px;
+    }
+
+    .message-header span {
+        font-size: 11px;
+    }
+
+    .message-text {
+        font-size: 14px;
+    }
 }
