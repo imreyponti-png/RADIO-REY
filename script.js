@@ -46,9 +46,24 @@ onSnapshot(messagesQuery, (snapshot) => {
 
         messageElement.className = "message";
 
+        let time = "";
+
+        if (data.createdAt) {
+            time = data.createdAt.toDate().toLocaleTimeString("ro-RO", {
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+        }
+
         messageElement.innerHTML = `
-            <strong>${escapeHtml(data.username || "Anonim")}:</strong>
-            ${escapeHtml(data.message || "")}
+            <div class="message-header">
+                <strong>${escapeHtml(data.username || "Anonim")}</strong>
+                <span>${time}</span>
+            </div>
+
+            <div class="message-text">
+                ${escapeHtml(data.message || "")}
+            </div>
         `;
 
         messagesDiv.appendChild(messageElement);
@@ -84,6 +99,8 @@ async function sendMessage() {
 
     try {
 
+        sendBtn.disabled = true;
+
         await addDoc(messagesRef, {
             username: username,
             message: message,
@@ -98,6 +115,10 @@ async function sendMessage() {
         console.error("Eroare Firebase:", error);
 
         alert("Mesajul nu a putut fi trimis.");
+
+    } finally {
+
+        sendBtn.disabled = false;
 
     }
 }
