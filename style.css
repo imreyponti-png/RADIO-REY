@@ -5,6 +5,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
 body {
     background: #111827;
     color: white;
@@ -12,7 +13,6 @@ body {
     padding: 40px 20px;
 }
 
-/* CONTAINER PRINCIPAL */
 
 .container {
     width: 100%;
@@ -24,6 +24,7 @@ body {
     box-shadow: 0 0 30px rgba(0, 229, 255, 0.12);
 }
 
+
 /* HEADER */
 
 header {
@@ -31,11 +32,13 @@ header {
     margin-bottom: 30px;
 }
 
+
 header h1 {
     font-size: 40px;
     color: #00e5ff;
     text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
 }
+
 
 header p {
     margin-top: 8px;
@@ -43,19 +46,23 @@ header p {
     font-size: 15px;
 }
 
-/* RADIO PLAYER */
+
+/* PLAYER */
 
 .player {
     margin-bottom: 30px;
 }
 
+
 .player h2 {
     margin-bottom: 15px;
 }
 
+
 audio {
     width: 100%;
 }
+
 
 /* CHAT */
 
@@ -63,7 +70,8 @@ audio {
     margin-bottom: 15px;
 }
 
-/* FEREASTRA MESAJELOR */
+
+/* FEREASTRA CHAT */
 
 #messages {
     height: 350px;
@@ -75,125 +83,241 @@ audio {
     border: 1px solid #374151;
 }
 
-/* MESAJ */
+
+/* RÂND MESAJ */
+
+.message-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+
+/* MESAJUL MEU */
+
+.message-row.mine {
+    flex-direction: row-reverse;
+}
+
+
+/* AVATAR */
+
+.avatar {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #00bcd4;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.25);
+}
+
+
+/* BULA MESAJ */
 
 .message {
-    margin-bottom: 10px;
-    padding: 11px 13px;
+    max-width: 75%;
+
+    padding: 10px 13px;
+
     background: #374151;
-    border-radius: 10px;
+
+    border-radius: 12px;
+
     border-left: 3px solid #00e5ff;
+
     transition: 0.2s;
 }
 
-.message:hover {
-    background: #414b5c;
+
+/* MESAJUL MEU */
+
+.message-row.mine .message {
+    background: #075985;
+
+    border-left: none;
+    border-right: 3px solid #00e5ff;
+
+    border-radius: 12px 12px 3px 12px;
 }
 
-/* NUME + ORA */
+
+/* MESAJ NORMAL */
+
+.message-row:not(.mine) .message {
+    border-radius: 12px 12px 12px 3px;
+}
+
+
+.message:hover {
+    transform: translateY(-1px);
+}
+
+
+/* HEADER MESAJ */
 
 .message-header {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 5px;
+
+    gap: 15px;
+
+    margin-bottom: 4px;
 }
+
 
 .message-header strong {
     color: #00e5ff;
-    font-size: 15px;
+
+    font-size: 14px;
 }
+
+
+.message-row.mine .message-header strong {
+    color: #ffffff;
+}
+
 
 .message-header span {
     color: #9ca3af;
-    font-size: 12px;
+
+    font-size: 11px;
+
     white-space: nowrap;
 }
 
-/* TEXT MESAJ */
+
+/* TEXT */
 
 .message-text {
     color: #f3f4f6;
+
     font-size: 15px;
+
     line-height: 1.4;
+
     word-break: break-word;
 }
 
-/* ZONA DE TRIMITERE */
-
-.send {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
 
 /* INPUTURI */
 
+.send {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
 .send input {
     padding: 13px;
+
     border: 1px solid #374151;
+
     border-radius: 8px;
+
     background: #111827;
+
     color: white;
+
     font-size: 16px;
+
     outline: none;
 }
+
 
 .send input::placeholder {
     color: #9ca3af;
 }
 
+
 .send input:focus {
     border-color: #00e5ff;
-    box-shadow: 0 0 8px rgba(0, 229, 255, 0.2);
+
+    box-shadow:
+        0 0 8px
+        rgba(0, 229, 255, 0.2);
 }
 
-/* BUTON TRIMITE */
+
+/* BUTON */
 
 .send button {
     padding: 13px;
+
     border: none;
+
     border-radius: 8px;
+
     background: #00bcd4;
+
     color: white;
+
     font-size: 18px;
+
     font-weight: bold;
+
     cursor: pointer;
+
     transition: 0.2s;
 }
 
+
 .send button:hover {
     background: #0097a7;
+
     transform: translateY(-1px);
 }
 
-/* BUTON DEZACTIVAT */
 
 .send button:disabled {
     opacity: 0.6;
+
     cursor: not-allowed;
+
     transform: none;
 }
 
-/* SCROLLBAR CHAT */
+
+/* SCROLLBAR */
 
 #messages::-webkit-scrollbar {
     width: 7px;
 }
 
+
 #messages::-webkit-scrollbar-track {
     background: #111827;
 }
 
+
 #messages::-webkit-scrollbar-thumb {
     background: #374151;
+
     border-radius: 10px;
 }
+
 
 #messages::-webkit-scrollbar-thumb:hover {
     background: #4b5563;
 }
+
 
 /* TELEFON */
 
@@ -203,32 +327,55 @@ audio {
         padding: 20px 10px;
     }
 
+
     .container {
         padding: 18px;
+
         border-radius: 12px;
     }
+
 
     header h1 {
         font-size: 30px;
     }
 
+
     header p {
         font-size: 14px;
     }
+
 
     #messages {
         height: 300px;
     }
 
-    .message-header strong {
-        font-size: 14px;
+
+    .message {
+        max-width: 82%;
     }
 
-    .message-header span {
-        font-size: 11px;
+
+    .avatar {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+
+        font-size: 15px;
     }
+
+
+    .message-header strong {
+        font-size: 13px;
+    }
+
+
+    .message-header span {
+        font-size: 10px;
+    }
+
 
     .message-text {
         font-size: 14px;
     }
+
 }
