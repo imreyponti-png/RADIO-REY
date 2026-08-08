@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>RADIO REY</title>
 
     <link rel="stylesheet" href="style.css">
@@ -10,51 +12,47 @@
 
 <body>
 
-<div class="container">
+<header>
+    <h1>🎧 RADIO REY</h1>
+    <p>Music • Chat • Vibe</p>
+</header>
 
-    <header>
-        <h1>🎧 RADIO REY</h1>
-        <p>Music • Chat • Vibe</p>
-    </header>
+<section class="player">
 
-    <section class="player">
+    <h2>Radio Live</h2>
 
-        <h2>Radio Live</h2>
+    <audio controls autoplay>
+        <source src="http://s6.myradiostream.com:51318/" type="audio/mpeg">
+        Browserul tău nu suportă playerul audio.
+    </audio>
 
-        <audio controls autoplay>
-            <source src="http://s6.myradiostream.com:51318/" type="audio/mpeg">
-            Browserul tău nu suportă playerul audio.
-        </audio>
+</section>
 
-    </section>
+<section class="chat">
 
-    <section class="chat">
+    <h2>💬 Chat Live</h2>
 
-        <h2>💬 Chat Live</h2>
+    <div id="messages"></div>
 
-        <div id="messages"></div>
+    <div class="send">
 
-        <div class="send">
+        <input
+            type="text"
+            id="username"
+            placeholder="Numele tău">
 
-            <input
-                type="text"
-                id="username"
-                placeholder="Numele tău">
+        <input
+            type="text"
+            id="message"
+            placeholder="Scrie un mesaj...">
 
-            <input
-                type="text"
-                id="message"
-                placeholder="Scrie un mesaj...">
+        <button id="sendBtn">
+            Trimite
+        </button>
 
-            <button id="sendBtn">
-                Trimite
-            </button>
+    </div>
 
-        </div>
-
-    </section>
-
-</div>
+</section>
 
 <script type="module" src="script.js"></script>
 
