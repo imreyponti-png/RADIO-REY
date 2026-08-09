@@ -6,25 +6,19 @@
     box-sizing: border-box;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     margin: 0;
     min-height: 100vh;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 
     color: #f7f8fc;
 
-    background:
-        #090b14;
+    background: #090b14;
 
     overflow-x: hidden;
 }
@@ -51,14 +45,12 @@ body {
     z-index: -1;
 }
 
-
 .glow-one {
     top: -200px;
     left: -200px;
 
     background: #ff2d55;
 }
-
 
 .glow-two {
     right: -200px;
@@ -78,10 +70,7 @@ body {
 
     margin: 0 auto;
 
-    padding:
-        35px
-        24px
-        30px;
+    padding: 35px 24px 30px;
 }
 
 
@@ -95,7 +84,6 @@ body {
     margin-bottom: 35px;
 }
 
-
 .live-badge {
     display: inline-flex;
 
@@ -103,18 +91,13 @@ body {
 
     gap: 8px;
 
-    padding:
-        8px
-        15px;
+    padding: 8px 15px;
 
-    border:
-        1px solid
-        rgba(255, 55, 85, 0.35);
+    border: 1px solid rgba(255, 55, 85, 0.35);
 
     border-radius: 999px;
 
-    background:
-        rgba(255, 45, 85, 0.1);
+    background: rgba(255, 45, 85, 0.1);
 
     color: #ff7890;
 
@@ -125,7 +108,6 @@ body {
     letter-spacing: 1px;
 }
 
-
 .live-dot {
     width: 8px;
     height: 8px;
@@ -134,44 +116,31 @@ body {
 
     background: #ff2d55;
 
-    box-shadow:
-        0 0 12px
-        #ff2d55;
+    box-shadow: 0 0 12px #ff2d55;
 
     animation: pulse 1.5s infinite;
 }
 
-
 .site-header h1 {
-    margin:
-        18px
-        0
-        8px;
+    margin: 18px 0 8px;
 
-    font-size: clamp(
-        36px,
-        6vw,
-        68px
-    );
+    font-size: clamp(36px, 6vw, 68px);
 
     font-weight: 900;
 
     letter-spacing: 2px;
 }
 
-
 .headphones {
     display: inline-block;
 
     margin-right: 8px;
 
-    filter:
-        drop-shadow(
-            0 0 20px
-            rgba(255, 45, 85, 0.35)
-        );
+    filter: drop-shadow(
+        0 0 20px
+        rgba(255, 45, 85, 0.35)
+    );
 }
-
 
 .tagline {
     margin: 0;
@@ -183,13 +152,10 @@ body {
     letter-spacing: 1px;
 }
 
-
 .tagline span {
     color: #ff2d55;
 
-    margin:
-        0
-        6px;
+    margin: 0 6px;
 }
 
 
@@ -216,9 +182,7 @@ body {
 
 .radio-card,
 .chat-card {
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
     border-radius: 22px;
 
@@ -245,7 +209,6 @@ body {
     padding: 25px;
 }
 
-
 .card-heading,
 .chat-header {
     display: flex;
@@ -258,7 +221,6 @@ body {
 
     margin-bottom: 22px;
 }
-
 
 .section-label {
     display: block;
@@ -274,14 +236,12 @@ body {
     letter-spacing: 2px;
 }
 
-
 .card-heading h2,
 .chat-header h2 {
     margin: 0;
 
     font-size: 23px;
 }
-
 
 .on-air-status,
 .online-count {
@@ -291,14 +251,11 @@ body {
 
     gap: 7px;
 
-    padding:
-        8px
-        10px;
+    padding: 8px 10px;
 
     border-radius: 10px;
 
-    background:
-        rgba(255, 45, 85, 0.1);
+    background: rgba(255, 45, 85, 0.1);
 
     color: #ff8ca0;
 
@@ -306,7 +263,6 @@ body {
 
     font-weight: 800;
 }
-
 
 .on-air-status span,
 .online-dot {
@@ -317,9 +273,7 @@ body {
 
     background: #ff2d55;
 
-    box-shadow:
-        0 0 10px
-        #ff2d55;
+    box-shadow: 0 0 10px #ff2d55;
 
     animation: pulse 1.5s infinite;
 }
@@ -334,21 +288,18 @@ body {
 
     height: 500px;
 
-    border:
-        1px solid
-        rgba(255, 45, 85, 0.35);
+    border: 1px solid rgba(255, 45, 85, 0.35);
 
     border-radius: 18px;
 
     overflow: hidden;
 
-    background: #05060b;
+    background: #ffffff;
 
     box-shadow:
         0 0 35px
         rgba(255, 45, 85, 0.08);
 }
-
 
 .radio-frame-top {
     height: 46px;
@@ -361,9 +312,7 @@ body {
 
     gap: 15px;
 
-    padding:
-        0
-        16px;
+    padding: 0 16px;
 
     background:
         linear-gradient(
@@ -376,7 +325,6 @@ body {
         1px solid
         rgba(255, 255, 255, 0.08);
 }
-
 
 .frame-brand {
     display: flex;
@@ -392,7 +340,6 @@ body {
     letter-spacing: 1px;
 }
 
-
 .frame-dot {
     width: 8px;
     height: 8px;
@@ -401,11 +348,8 @@ body {
 
     background: #ff2d55;
 
-    box-shadow:
-        0 0 10px
-        #ff2d55;
+    box-shadow: 0 0 10px #ff2d55;
 }
-
 
 .secure-text {
     color: #7f8aa4;
@@ -418,24 +362,45 @@ body {
 }
 
 
-.radio-frame iframe {
-    display: block;
+/* PLAYER OFICIAL */
 
+#radio-player {
     width: 100%;
 
     height: calc(100% - 46px);
 
-    border: none;
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
 
     background: #ffffff;
 }
 
 
+/* PLAYERUL GENERAT DE MYRADIOSTREAM */
+
+#radio-player iframe {
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    height: 100% !important;
+
+    border: none !important;
+}
+
+#radio-player object,
+#radio-player embed {
+    max-width: 100%;
+}
+
+
 .radio-description {
-    margin:
-        17px
-        0
-        0;
+    margin: 17px 0 0;
 
     color: #8d96ad;
 
@@ -459,7 +424,6 @@ body {
     padding: 25px;
 }
 
-
 .messages {
     flex: 1;
 
@@ -469,20 +433,15 @@ body {
 
     overflow-y: auto;
 
-    padding:
-        5px
-        8px
-        10px;
+    padding: 5px 8px 10px;
 
     scrollbar-width: thin;
 
-    scrollbar-color:
-        #ff2d55
-        transparent;
+    scrollbar-color: #ff2d55 transparent;
 }
 
 
-/* MESAJ BUN VENIT */
+/* BUN VENIT */
 
 .welcome-message {
     display: flex;
@@ -504,18 +463,15 @@ body {
     color: #8e98b0;
 }
 
-
 .welcome-icon {
     font-size: 35px;
 }
-
 
 .welcome-message strong {
     color: #f3f5fa;
 
     font-size: 17px;
 }
-
 
 .welcome-message span {
     max-width: 260px;
@@ -533,18 +489,14 @@ body {
 
     padding: 12px;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
 
     border-radius: 14px;
 
-    background:
-        rgba(255, 255, 255, 0.035);
+    background: rgba(255, 255, 255, 0.035);
 
     word-break: break-word;
 }
-
 
 .message-name {
     display: block;
@@ -558,7 +510,6 @@ body {
     font-weight: 800;
 }
 
-
 .message-text {
     display: block;
 
@@ -568,7 +519,6 @@ body {
 
     line-height: 1.4;
 }
-
 
 .message-time {
     display: block;
@@ -595,7 +545,6 @@ body {
         rgba(255, 255, 255, 0.07);
 }
 
-
 .chat-input-area input {
     width: 100%;
 
@@ -618,7 +567,6 @@ body {
         box-shadow 0.2s;
 }
 
-
 .chat-input-area input:focus {
     border-color:
         rgba(255, 45, 85, 0.75);
@@ -628,24 +576,19 @@ body {
         rgba(255, 45, 85, 0.1);
 }
 
-
 #username {
     height: 44px;
 
     margin-bottom: 10px;
 
-    padding:
-        0
-        13px;
+    padding: 0 13px;
 }
-
 
 .message-input-row {
     display: flex;
 
     gap: 9px;
 }
-
 
 #message {
     flex: 1;
@@ -654,18 +597,13 @@ body {
 
     min-width: 0;
 
-    padding:
-        0
-        13px;
+    padding: 0 13px;
 }
-
 
 #sendBtn {
     height: 46px;
 
-    padding:
-        0
-        15px;
+    padding: 0 15px;
 
     border: none;
 
@@ -688,10 +626,8 @@ body {
 
     transition:
         transform 0.2s,
-        box-shadow 0.2s,
-        opacity 0.2s;
+        box-shadow 0.2s;
 }
-
 
 #sendBtn:hover {
     transform: translateY(-1px);
@@ -701,11 +637,9 @@ body {
         rgba(255, 45, 85, 0.3);
 }
 
-
 #sendBtn:active {
     transform: scale(0.97);
 }
-
 
 .send-icon {
     display: none;
@@ -717,14 +651,10 @@ body {
 ========================================= */
 
 .site-footer {
-    padding:
-        35px
-        15px
-        10px;
+    padding: 35px 15px 10px;
 
     text-align: center;
 }
-
 
 .footer-logo {
     margin-bottom: 7px;
@@ -738,7 +668,6 @@ body {
     letter-spacing: 1px;
 }
 
-
 .site-footer p {
     margin: 0;
 
@@ -749,7 +678,7 @@ body {
 
 
 /* =========================================
-   ANIMATIE LIVE
+   ANIMATIE
 ========================================= */
 
 @keyframes pulse {
@@ -779,19 +708,16 @@ body {
 @media (max-width: 1000px) {
 
     .main-layout {
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
         max-width: 850px;
 
         margin: 0 auto;
     }
 
-
     .chat-card {
         min-height: 520px;
     }
-
 
     .messages {
         max-height: 350px;
@@ -807,17 +733,12 @@ body {
 @media (max-width: 600px) {
 
     .site-container {
-        padding:
-            20px
-            12px
-            25px;
+        padding: 20px 12px 25px;
     }
-
 
     .site-header {
         margin-bottom: 25px;
     }
-
 
     .site-header h1 {
         font-size: 36px;
@@ -825,16 +746,13 @@ body {
         letter-spacing: 1px;
     }
 
-
     .tagline {
         font-size: 14px;
     }
 
-
     .main-layout {
         gap: 16px;
     }
-
 
     .radio-card,
     .chat-card {
@@ -843,12 +761,10 @@ body {
         border-radius: 17px;
     }
 
-
     .card-heading h2,
     .chat-header h2 {
         font-size: 18px;
     }
-
 
     .radio-frame {
         height: 430px;
@@ -856,23 +772,17 @@ body {
         border-radius: 14px;
     }
 
-
     .radio-frame-top {
-        padding:
-            0
-            12px;
+        padding: 0 12px;
     }
-
 
     .secure-text {
         display: none;
     }
 
-
     .chat-card {
         min-height: 520px;
     }
-
 
     .messages {
         min-height: 280px;
@@ -880,25 +790,19 @@ body {
         max-height: 340px;
     }
 
-
     .message-input-row {
         gap: 7px;
     }
 
-
     #sendBtn {
         min-width: 48px;
 
-        padding:
-            0
-            13px;
+        padding: 0 13px;
     }
-
 
     .send-text {
         display: none;
     }
-
 
     .send-icon {
         display: inline;
@@ -910,7 +814,7 @@ body {
 
 
 /* =========================================
-   TELEFOANE FOARTE MICI
+   TELEFOANE MICI
 ========================================= */
 
 @media (max-width: 380px) {
@@ -919,11 +823,9 @@ body {
         font-size: 30px;
     }
 
-
     .radio-frame {
         height: 390px;
     }
-
 
     .on-air-status,
     .online-count {
