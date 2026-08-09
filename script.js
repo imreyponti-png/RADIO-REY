@@ -1,259 +1,227 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+const usernameInput =
+    document.getElementById("username");
 
-import {
-    getFirestore,
-    collection,
-    addDoc,
-    query,
-    orderBy,
-    onSnapshot,
-    serverTimestamp
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+const messageInput =
+    document.getElementById("message");
 
+const sendButton =
+    document.getElementById("sendBtn");
 
-const firebaseConfig = {
-    apiKey: "AIzaSyB1UTGfRK_I6A9qRHkdJCYGvzVRSzzAzn8",
-    authDomain: "radio-rey-b81ea.firebaseapp.com",
-    projectId: "radio-rey-b81ea",
-    storageBucket: "radio-rey-b81ea.firebasestorage.app",
-    messagingSenderId: "209865095703",
-    appId: "1:209865095703:web:1954df12fa3f6bf7877a52",
-    measurementId: "G-TJCFBZE3J1"
-};
+const messages =
+    document.getElementById("messages");
 
 
-const app = initializeApp(firebaseConfig);
-
-const db = getFirestore(app);
-
-
-const messagesDiv = document.getElementById("messages");
-
-const usernameInput = document.getElementById("username");
-
-const messageInput = document.getElementById("message");
-
-const sendBtn = document.getElementById("sendBtn");
+let chatMessages =
+    JSON.parse(
+        localStorage.getItem("radioReyChat")
+    ) || [];
 
 
-const messagesRef = collection(db, "messages");
+/* AFIȘARE MESAJE */
+
+function displayMessages() {
+
+    messages.innerHTML = "";
 
 
-const messagesQuery = query(
-    messagesRef,
-    orderBy("createdAt", "asc")
-);
+    if (chatMessages.length === 0) {
 
-
-/* PĂSTRĂM NUMELE UTILIZATORULUI */
-
-const savedUsername = localStorage.getItem("radioReyUsername");
-
-if (savedUsername) {
-    usernameInput.value = savedUsername;
-}
-
-
-/* AFIȘARE MESaje */
-
-onSnapshot(messagesQuery, (snapshot) => {
-
-    messagesDiv.innerHTML = "";
-
-    const currentUsername = usernameInput.value.trim();
-
-    snapshot.forEach((doc) => {
-
-        const data = doc.data();
-
-        const username = data.username || "Anonim";
-
-        const message = data.message || "";
-
-        const isMine = currentUsername !== "" && username === currentUsername;
-
-
-        /* AVATAR */
-
-        const firstLetter = username
-            .charAt(0)
-            .toUpperCase();
-
-
-        /* ORA */
-
-        let time = "";
-
-        if (data.createdAt) {
-
-            time = data.createdAt.toDate().toLocaleTimeString(
-                "ro-RO",
-                {
-                    hour: "2-digit",
-                    minute: "2-digit"
-                }
-            );
-
-        }
-
-
-        /* MESAJ */
-
-        const messageElement = document.createElement("div");
-
-        messageElement.className =
-            isMine
-                ? "message-row mine"
-                : "message-row";
-
-
-        messageElement.innerHTML = `
-
-            <div class="avatar">
-                ${escapeHtml(firstLetter)}
+        messages.innerHTML = `
+            <div class="welcome-message">
+                👋 Bine ai venit în chatul RADIO REY!
             </div>
-
-            <div class="message">
-
-                <div class="message-header">
-
-                    <strong>
-                        ${escapeHtml(username)}
-                    </strong>
-
-                    <span>
-                        ${time}
-                    </span>
-
-                </div>
-
-                <div class="message-text">
-                    ${escapeHtml(message)}
-                </div>
-
-            </div>
-
         `;
 
+        return;
+    }
 
-        messagesDiv.appendChild(messageElement);
+
+    chatMessages.forEach(function(message) {
+
+        const messageElement =
+            document.createElement("div");
+
+        messageElement.className =
+            "chat-message";
+
+
+        const nameElement =
+            document.createElement("span");
+
+        nameElement.className =
+            "message-name";
+
+        nameElement.textContent =
+            message.username;
+
+
+        const textElement =
+            document.createElement("span");
+
+        textElement.className =
+            "message-text";
+
+        textElement.textContent =
+            message.text;
+
+
+        const timeElement =
+            document.createElement("span");
+
+        timeElement.className =
+            "message-time";
+
+        timeElement.textContent =
+            message.time;
+
+
+        messageElement.appendChild(
+            nameElement
+        );
+
+        messageElement.appendChild(
+            textElement
+        );
+
+        messageElement.appendChild(
+            timeElement
+        );
+
+
+        messages.appendChild(
+            messageElement
+        );
 
     });
 
 
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    messages.scrollTop =
+        messages.scrollHeight;
 
-});
-
-
-/* BUTON TRIMITE */
-
-sendBtn.addEventListener("click", sendMessage);
-
-
-/* ENTER = TRIMITE */
-
-messageInput.addEventListener("keydown", (event) => {
-
-    if (event.key === "Enter") {
-
-        sendMessage();
-
-    }
-
-});
+}
 
 
 /* TRIMITERE MESAJ */
 
-async function sendMessage() {
+function sendMessage() {
 
-    const username = usernameInput.value.trim();
+    const username =
+        usernameInput.value.trim();
 
-    const message = messageInput.value.trim();
+    const text =
+        messageInput.value.trim();
 
 
-    if (!username) {
+    if (username === "") {
 
-        alert("Introdu numele tău.");
+        alert(
+            "Te rog scrie numele tău."
+        );
 
         usernameInput.focus();
 
         return;
-
     }
 
 
-    if (!message) {
+    if (text === "") {
+
+        alert(
+            "Scrie un mesaj înainte să îl trimiți."
+        );
 
         messageInput.focus();
 
         return;
+    }
+
+
+    const now =
+        new Date();
+
+
+    const time =
+        now.toLocaleTimeString(
+            "ro-RO",
+            {
+                hour: "2-digit",
+                minute: "2-digit"
+            }
+        );
+
+
+    const newMessage = {
+
+        username: username,
+
+        text: text,
+
+        time: time
+
+    };
+
+
+    chatMessages.push(
+        newMessage
+    );
+
+
+    /* PĂSTREAZĂ MAXIM 100 MESAJE */
+
+    if (
+        chatMessages.length > 100
+    ) {
+
+        chatMessages.shift();
 
     }
 
 
-    try {
-
-        sendBtn.disabled = true;
-
-
-        /* SALVĂM NUMELE */
-
-        localStorage.setItem(
-            "radioReyUsername",
-            username
-        );
+    localStorage.setItem(
+        "radioReyChat",
+        JSON.stringify(
+            chatMessages
+        )
+    );
 
 
-        /* SALVĂM MESAJUL ÎN FIREBASE */
-
-        await addDoc(messagesRef, {
-
-            username: username,
-
-            message: message,
-
-            createdAt: serverTimestamp()
-
-        });
+    messageInput.value = "";
 
 
-        messageInput.value = "";
-
-        messageInput.focus();
+    displayMessages();
 
 
-    } catch (error) {
+    messageInput.focus();
 
-        console.error(
-            "Eroare Firebase:",
-            error
-        );
-
-        alert(
-            "Mesajul nu a putut fi trimis."
-        );
+}
 
 
-    } finally {
+/* BUTON TRIMITE */
 
-        sendBtn.disabled = false;
+sendButton.addEventListener(
+    "click",
+    sendMessage
+);
+
+
+/* ENTER PENTRU TRIMITERE */
+
+messageInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            sendMessage();
+
+        }
 
     }
+);
 
-}
 
+/* ÎNCĂRCARE MESAJE */
 
-/* PROTECȚIE HTML */
-
-function escapeHtml(text) {
-
-    const div =
-        document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
-
-}
+displayMessages();
