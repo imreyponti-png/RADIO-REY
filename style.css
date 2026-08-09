@@ -294,7 +294,7 @@ body {
 
     overflow: hidden;
 
-    background: #ffffff;
+    background: #11131d;
 
     box-shadow:
         0 0 35px
@@ -362,7 +362,9 @@ body {
 }
 
 
-/* PLAYER OFICIAL */
+/* =========================================
+   PLAYER OFICIAL CASTER.FM
+========================================= */
 
 #radio-player {
     width: 100%;
@@ -377,27 +379,50 @@ body {
 
     overflow: hidden;
 
-    background: #ffffff;
+    background: #11131d;
+
+    padding: 20px;
 }
 
+/* Containerul oficial Caster */
 
-/* PLAYERUL GENERAT DE MYRADIOSTREAM */
+.caster-player {
+    width: 100%;
+}
 
-#radio-player iframe {
+.caster-player .cstrEmbed {
+    width: 100%;
+
+    max-width: 100%;
+
+    min-height: 250px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+/* Elementele generate de Caster */
+
+.caster-player iframe {
     width: 100% !important;
 
     max-width: 100% !important;
 
-    height: 100% !important;
-
     border: none !important;
 }
 
-#radio-player object,
-#radio-player embed {
-    max-width: 100%;
+.caster-player object,
+.caster-player embed {
+    max-width: 100% !important;
 }
 
+
+/* =========================================
+   DESCRIERE RADIO
+========================================= */
 
 .radio-description {
     margin: 17px 0 0;
@@ -441,7 +466,9 @@ body {
 }
 
 
-/* BUN VENIT */
+/* =========================================
+   BUN VENIT CHAT
+========================================= */
 
 .welcome-message {
     display: flex;
@@ -482,7 +509,9 @@ body {
 }
 
 
-/* MESAJ UTILIZATOR */
+/* =========================================
+   MESAJ UTILIZATOR
+========================================= */
 
 .chat-message {
     margin-bottom: 12px;
@@ -778,6 +807,14 @@ body {
 
     .secure-text {
         display: none;
+    }
+
+    #radio-player {
+        padding: 12px;
+    }
+
+    .caster-player .cstrEmbed {
+        min-height: 220px;
     }
 
     .chat-card {
