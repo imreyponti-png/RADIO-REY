@@ -11,10 +11,6 @@ const messagesContainer =
     document.getElementById("messages");
 
 
-/* =========================================
-   STOCARE LOCALA
-========================================= */
-
 const storageKey =
     "radioReyChatMessages";
 
@@ -25,9 +21,7 @@ let chatMessages =
     ) || [];
 
 
-/* =========================================
-   ESCAPARE TEXT
-========================================= */
+/* PROTEJARE TEXT */
 
 function escapeHtml(text) {
 
@@ -41,9 +35,7 @@ function escapeHtml(text) {
 }
 
 
-/* =========================================
-   AFISARE MESAJE
-========================================= */
+/* AFISARE MESAJE */
 
 function displayMessages() {
 
@@ -71,7 +63,6 @@ function displayMessages() {
         `;
 
         return;
-
     }
 
 
@@ -112,9 +103,7 @@ function displayMessages() {
 }
 
 
-/* =========================================
-   SALVARE MESAJE
-========================================= */
+/* SALVARE MESAJE */
 
 function saveMessages() {
 
@@ -126,9 +115,7 @@ function saveMessages() {
 }
 
 
-/* =========================================
-   TRIMITERE MESAJ
-========================================= */
+/* TRIMITERE MESAJ */
 
 function sendMessage() {
 
@@ -147,7 +134,6 @@ function sendMessage() {
             "Introdu numele tău";
 
         return;
-
     }
 
 
@@ -159,7 +145,6 @@ function sendMessage() {
             "Scrie un mesaj";
 
         return;
-
     }
 
 
@@ -193,11 +178,9 @@ function sendMessage() {
     );
 
 
-    /* PASTRAM MAXIM 100 MESAJE */
+    /* MAXIM 100 MESAJE */
 
-    if (
-        chatMessages.length > 100
-    ) {
+    if (chatMessages.length > 100) {
 
         chatMessages.shift();
 
@@ -218,9 +201,7 @@ function sendMessage() {
 }
 
 
-/* =========================================
-   BUTON TRIMITE
-========================================= */
+/* BUTON TRIMITE */
 
 sendButton.addEventListener(
     "click",
@@ -228,9 +209,7 @@ sendButton.addEventListener(
 );
 
 
-/* =========================================
-   ENTER PENTRU TRIMITERE
-========================================= */
+/* ENTER */
 
 messageInput.addEventListener(
     "keydown",
@@ -248,9 +227,7 @@ messageInput.addEventListener(
 );
 
 
-/* =========================================
-   ACTUALIZARE CHAT INTRE TAB-URI
-========================================= */
+/* SINCRONIZARE INTRE TAB-URI */
 
 window.addEventListener(
     "storage",
@@ -263,7 +240,6 @@ window.addEventListener(
                     event.newValue
                 ) || [];
 
-
             displayMessages();
 
         }
@@ -272,8 +248,6 @@ window.addEventListener(
 );
 
 
-/* =========================================
-   INCARCARE INITIALA
-========================================= */
+/* INCARCARE INITIALA */
 
 displayMessages();
