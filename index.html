@@ -11,7 +11,7 @@
     content="width=device-width, initial-scale=1.0"
 >
 
-<title>RADIO REY - Live</title>
+<title>Ascultă RADIO REY</title>
 
 <link rel="stylesheet" href="style.css">
 ```
@@ -21,101 +21,45 @@
 <body>
 
 ```
-<!-- HEADER -->
+<main class="listen-page">
 
-<header>
+    <div class="listen-card">
 
-    <div class="live-badge">
-        <span class="live-dot"></span>
-        LIVE
-    </div>
-
-    <h1>🎧 RADIO REY</h1>
-
-    <p>Music • Chat • Vibe</p>
-
-</header>
-
-
-<!-- RADIO -->
-
-<section class="player">
-
-    <h2>📻 Radio Live</h2>
-
-
-    <div class="now-playing">
-
-        <div class="cover">
-            🎵
+        <div class="live-badge">
+            <span class="live-dot"></span>
+            LIVE
         </div>
 
-
-        <div class="track-info">
-
-            <span>ACUM SE ASCULTĂ</span>
-
-            <strong>RADIO REY</strong>
-
-            <p>Music • Chat • Vibe</p>
-
+        <div class="big-cover">
+            🎧
         </div>
 
-    </div>
+        <h1>RADIO REY</h1>
+
+        <p>Music • Chat • Vibe</p>
 
 
-    <!-- BUTON RADIO -->
+        <!-- PLAYER OFICIAL -->
 
-    <a
-        href="http://Reyponti.on-air.fm/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="radio-button"
-    >
-        ▶ ASCULTĂ RADIO REY LIVE
-    </a>
-
-</section>
-
-
-<!-- CHAT -->
-
-<section class="chat">
-
-    <h2>💬 Chat Live</h2>
+        <iframe
+            src="https://reyponti.on-air.fm/free/"
+            width="100%"
+            height="180"
+            frameborder="0"
+            scrolling="no"
+            allow="autoplay"
+            title="RADIO REY Player"
+            style="border: none;"
+        ></iframe>
 
 
-    <div id="messages"></div>
-
-
-    <div class="send">
-
-        <input
-            type="text"
-            id="username"
-            placeholder="Numele tău"
-            maxlength="30"
-        >
-
-
-        <input
-            type="text"
-            id="message"
-            placeholder="Scrie un mesaj..."
-            maxlength="300"
-        >
-
-
-        <button id="sendBtn">
-            Trimite
-        </button>
+        <a href="index.html" class="back-button">
+            ← Înapoi la pagina principală
+        </a>
 
     </div>
 
-</section>
-
-
-<script src="script.js"></script>
+</main>
 ```
 
 </body>
