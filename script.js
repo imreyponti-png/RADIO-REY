@@ -1,12 +1,24 @@
-const usernameInput = document.getElementById("username");
-const messageInput = document.getElementById("message");
-const sendButton = document.getElementById("sendBtn");
-const messagesContainer = document.getElementById("messages");
+const usernameInput =
+    document.getElementById("username");
 
-const storageKey = "radioReyChatMessages";
+const messageInput =
+    document.getElementById("message");
+
+const sendButton =
+    document.getElementById("sendBtn");
+
+const messagesContainer =
+    document.getElementById("messages");
+
+
+const storageKey =
+    "radioReyChatMessages";
+
 
 let chatMessages =
-    JSON.parse(localStorage.getItem(storageKey)) || [];
+    JSON.parse(
+        localStorage.getItem(storageKey)
+    ) || [];
 
 
 /* =========================================
@@ -15,11 +27,14 @@ let chatMessages =
 
 function escapeHtml(text) {
 
-    const div = document.createElement("div");
+    const div =
+        document.createElement("div");
 
-    div.textContent = text;
+    div.textContent =
+        text;
 
     return div.innerHTML;
+
 }
 
 
@@ -29,12 +44,14 @@ function escapeHtml(text) {
 
 function displayMessages() {
 
-    messagesContainer.innerHTML = "";
+    messagesContainer.innerHTML =
+        "";
 
 
     if (chatMessages.length === 0) {
 
         messagesContainer.innerHTML = `
+
             <div class="welcome-message">
 
                 <div class="welcome-icon">
@@ -50,45 +67,53 @@ function displayMessages() {
                 </span>
 
             </div>
+
         `;
 
         return;
+
     }
 
 
-    chatMessages.forEach(function (message) {
+    chatMessages.forEach(
+        function (message) {
 
-        const messageElement =
-            document.createElement("div");
-
-        messageElement.className =
-            "chat-message";
+            const messageElement =
+                document.createElement("div");
 
 
-        messageElement.innerHTML = `
-            <span class="message-name">
-                ${escapeHtml(message.username)}
-            </span>
-
-            <span class="message-text">
-                ${escapeHtml(message.text)}
-            </span>
-
-            <span class="message-time">
-                ${escapeHtml(message.time)}
-            </span>
-        `;
+            messageElement.className =
+                "chat-message";
 
 
-        messagesContainer.appendChild(
-            messageElement
-        );
+            messageElement.innerHTML = `
 
-    });
+                <span class="message-name">
+                    ${escapeHtml(message.username)}
+                </span>
+
+                <span class="message-text">
+                    ${escapeHtml(message.text)}
+                </span>
+
+                <span class="message-time">
+                    ${escapeHtml(message.time)}
+                </span>
+
+            `;
+
+
+            messagesContainer.appendChild(
+                messageElement
+            );
+
+        }
+    );
 
 
     messagesContainer.scrollTop =
         messagesContainer.scrollHeight;
+
 }
 
 
@@ -127,6 +152,7 @@ function sendMessage() {
             "Introdu numele tău";
 
         return;
+
     }
 
 
@@ -138,10 +164,12 @@ function sendMessage() {
             "Scrie un mesaj";
 
         return;
+
     }
 
 
-    const now = new Date();
+    const now =
+        new Date();
 
 
     const time =
@@ -156,16 +184,21 @@ function sendMessage() {
 
     const newMessage = {
 
-        username: username,
+        username:
+            username,
 
-        text: text,
+        text:
+            text,
 
-        time: time
+        time:
+            time
 
     };
 
 
-    chatMessages.push(newMessage);
+    chatMessages.push(
+        newMessage
+    );
 
 
     /* MAXIM 100 MESAJE */
@@ -180,7 +213,8 @@ function sendMessage() {
     saveMessages();
 
 
-    messageInput.value = "";
+    messageInput.value =
+        "";
 
 
     displayMessages();
@@ -222,7 +256,7 @@ messageInput.addEventListener(
 
 
 /* =========================================
-   SINCRONIZARE INTRE TAB-URI
+   SINCRONIZARE ÎNTRE TAB-URI
 ========================================= */
 
 window.addEventListener(
@@ -232,7 +266,10 @@ window.addEventListener(
         if (event.key === storageKey) {
 
             chatMessages =
-                JSON.parse(event.newValue) || [];
+                JSON.parse(
+                    event.newValue
+                ) || [];
+
 
             displayMessages();
 
