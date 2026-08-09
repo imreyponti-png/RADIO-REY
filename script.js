@@ -1,41 +1,31 @@
-const usernameInput =
-    document.getElementById("username");
+const usernameInput = document.getElementById("username");
+const messageInput = document.getElementById("message");
+const sendButton = document.getElementById("sendBtn");
+const messagesContainer = document.getElementById("messages");
 
-const messageInput =
-    document.getElementById("message");
-
-const sendButton =
-    document.getElementById("sendBtn");
-
-const messagesContainer =
-    document.getElementById("messages");
-
-
-const storageKey =
-    "radioReyChatMessages";
-
+const storageKey = "radioReyChatMessages";
 
 let chatMessages =
-    JSON.parse(
-        localStorage.getItem(storageKey)
-    ) || [];
+    JSON.parse(localStorage.getItem(storageKey)) || [];
 
 
-/* PROTEJARE TEXT */
+/* =========================================
+   PROTEJARE TEXT
+========================================= */
 
 function escapeHtml(text) {
 
-    const div =
-        document.createElement("div");
+    const div = document.createElement("div");
 
     div.textContent = text;
 
     return div.innerHTML;
-
 }
 
 
-/* AFISARE MESAJE */
+/* =========================================
+   AFISARE MESAJE
+========================================= */
 
 function displayMessages() {
 
@@ -66,7 +56,7 @@ function displayMessages() {
     }
 
 
-    chatMessages.forEach(function(message) {
+    chatMessages.forEach(function (message) {
 
         const messageElement =
             document.createElement("div");
@@ -99,11 +89,12 @@ function displayMessages() {
 
     messagesContainer.scrollTop =
         messagesContainer.scrollHeight;
-
 }
 
 
-/* SALVARE MESAJE */
+/* =========================================
+   SALVARE MESAJE
+========================================= */
 
 function saveMessages() {
 
@@ -115,7 +106,9 @@ function saveMessages() {
 }
 
 
-/* TRIMITERE MESAJ */
+/* =========================================
+   TRIMITERE MESAJ
+========================================= */
 
 function sendMessage() {
 
@@ -148,8 +141,7 @@ function sendMessage() {
     }
 
 
-    const now =
-        new Date();
+    const now = new Date();
 
 
     const time =
@@ -173,9 +165,7 @@ function sendMessage() {
     };
 
 
-    chatMessages.push(
-        newMessage
-    );
+    chatMessages.push(newMessage);
 
 
     /* MAXIM 100 MESAJE */
@@ -201,7 +191,9 @@ function sendMessage() {
 }
 
 
-/* BUTON TRIMITE */
+/* =========================================
+   BUTON TRIMITE
+========================================= */
 
 sendButton.addEventListener(
     "click",
@@ -209,11 +201,13 @@ sendButton.addEventListener(
 );
 
 
-/* ENTER */
+/* =========================================
+   ENTER PENTRU TRIMITERE
+========================================= */
 
 messageInput.addEventListener(
     "keydown",
-    function(event) {
+    function (event) {
 
         if (event.key === "Enter") {
 
@@ -227,18 +221,18 @@ messageInput.addEventListener(
 );
 
 
-/* SINCRONIZARE INTRE TAB-URI */
+/* =========================================
+   SINCRONIZARE INTRE TAB-URI
+========================================= */
 
 window.addEventListener(
     "storage",
-    function(event) {
+    function (event) {
 
         if (event.key === storageKey) {
 
             chatMessages =
-                JSON.parse(
-                    event.newValue
-                ) || [];
+                JSON.parse(event.newValue) || [];
 
             displayMessages();
 
@@ -248,6 +242,8 @@ window.addEventListener(
 );
 
 
-/* INCARCARE INITIALA */
+/* =========================================
+   INCARCARE INITIALA
+========================================= */
 
 displayMessages();
