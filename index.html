@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -16,12 +18,15 @@
     <title>RADIO REY • LIVE</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
     <div class="background-glow glow-one"></div>
     <div class="background-glow glow-two"></div>
+
 
     <main class="site-container">
 
@@ -48,16 +53,24 @@
         <!-- RADIO + CHAT -->
         <section class="main-layout">
 
+
             <!-- RADIO -->
             <section class="radio-card">
 
                 <div class="card-heading">
 
                     <div>
-                        <span class="section-label">ON AIR</span>
 
-                        <h2>📻 RADIO REY LIVE</h2>
+                        <span class="section-label">
+                            ON AIR
+                        </span>
+
+                        <h2>
+                            📻 RADIO REY LIVE
+                        </h2>
+
                     </div>
+
 
                     <div class="on-air-status">
                         <span></span>
@@ -84,10 +97,25 @@
                     </div>
 
 
-                    <!-- PLAYER OFICIAL MYRADIOSTREAM -->
-                    <div id="radio-player">
+                    <!-- PLAYER OFICIAL CASTER.FM -->
+                    <div
+                        id="radio-player"
+                        class="caster-player"
+                    >
 
-                        <script src="//myradiostream.com/embed/Reyponti"></script>
+                        <div
+                            class="cstrEmbed"
+                            data-type="newStreamPlayer"
+                            data-publicToken="5794e673-670d-4b3a-a361-a62831ec663b"
+                            data-theme="dark"
+                            data-color="6C2BDD"
+                            data-channelId=""
+                            data-rendered="false"
+                        >
+                            <a href="https://www.caster.fm">
+                                Radio Streaming
+                            </a>
+                        </div>
 
                     </div>
 
@@ -95,7 +123,7 @@
 
 
                 <p class="radio-description">
-                    Ascultă RADIO REY direct din pagina noastră.
+                    Ascultă RADIO REY live, direct din pagina noastră.
                 </p>
 
             </section>
@@ -107,10 +135,17 @@
                 <div class="chat-header">
 
                     <div>
-                        <span class="section-label">COMMUNITY</span>
 
-                        <h2>💬 CHAT LIVE</h2>
+                        <span class="section-label">
+                            COMMUNITY
+                        </span>
+
+                        <h2>
+                            💬 CHAT LIVE
+                        </h2>
+
                     </div>
+
 
                     <div class="online-count">
                         <span class="online-dot"></span>
@@ -126,6 +161,7 @@
                     class="messages"
                     aria-live="polite"
                 >
+
                     <div class="welcome-message">
 
                         <div class="welcome-icon">
@@ -141,6 +177,7 @@
                         </span>
 
                     </div>
+
                 </div>
 
 
@@ -172,6 +209,7 @@
                             type="button"
                             aria-label="Trimite mesajul"
                         >
+
                             <span class="send-text">
                                 Trimite
                             </span>
@@ -179,6 +217,7 @@
                             <span class="send-icon">
                                 ➤
                             </span>
+
                         </button>
 
                     </div>
@@ -206,7 +245,12 @@
     </main>
 
 
+    <!-- SCRIPT CHAT -->
     <script src="script.js"></script>
 
+    <!-- SCRIPT OFICIAL PLAYER CASTER.FM -->
+    <script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
+
 </body>
+
 </html>
