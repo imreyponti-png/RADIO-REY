@@ -7,32 +7,71 @@ const messageInput =
 const sendButton =
     document.getElementById("sendBtn");
 
-const messages =
+const messagesContainer =
     document.getElementById("messages");
+
+
+/* =========================================
+   STOCARE LOCALA
+========================================= */
+
+const storageKey =
+    "radioReyChatMessages";
 
 
 let chatMessages =
     JSON.parse(
-        localStorage.getItem("radioReyChat")
+        localStorage.getItem(storageKey)
     ) || [];
 
 
-/* AFIȘARE MESAJE */
+/* =========================================
+   ESCAPARE TEXT
+========================================= */
+
+function escapeHtml(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =========================================
+   AFISARE MESAJE
+========================================= */
 
 function displayMessages() {
 
-    messages.innerHTML = "";
+    messagesContainer.innerHTML = "";
 
 
     if (chatMessages.length === 0) {
 
-        messages.innerHTML = `
+        messagesContainer.innerHTML = `
             <div class="welcome-message">
-                👋 Bine ai venit în chatul RADIO REY!
+
+                <div class="welcome-icon">
+                    👋
+                </div>
+
+                <strong>
+                    Bine ai venit!
+                </strong>
+
+                <span>
+                    Intră în conversație și salută ascultătorii RADIO REY.
+                </span>
+
             </div>
         `;
 
         return;
+
     }
 
 
@@ -45,63 +84,51 @@ function displayMessages() {
             "chat-message";
 
 
-        const nameElement =
-            document.createElement("span");
+        messageElement.innerHTML = `
+            <span class="message-name">
+                ${escapeHtml(message.username)}
+            </span>
 
-        nameElement.className =
-            "message-name";
+            <span class="message-text">
+                ${escapeHtml(message.text)}
+            </span>
 
-        nameElement.textContent =
-            message.username;
-
-
-        const textElement =
-            document.createElement("span");
-
-        textElement.className =
-            "message-text";
-
-        textElement.textContent =
-            message.text;
+            <span class="message-time">
+                ${escapeHtml(message.time)}
+            </span>
+        `;
 
 
-        const timeElement =
-            document.createElement("span");
-
-        timeElement.className =
-            "message-time";
-
-        timeElement.textContent =
-            message.time;
-
-
-        messageElement.appendChild(
-            nameElement
-        );
-
-        messageElement.appendChild(
-            textElement
-        );
-
-        messageElement.appendChild(
-            timeElement
-        );
-
-
-        messages.appendChild(
+        messagesContainer.appendChild(
             messageElement
         );
 
     });
 
 
-    messages.scrollTop =
-        messages.scrollHeight;
+    messagesContainer.scrollTop =
+        messagesContainer.scrollHeight;
 
 }
 
 
-/* TRIMITERE MESAJ */
+/* =========================================
+   SALVARE MESAJE
+========================================= */
+
+function saveMessages() {
+
+    localStorage.setItem(
+        storageKey,
+        JSON.stringify(chatMessages)
+    );
+
+}
+
+
+/* =========================================
+   TRIMITERE MESAJ
+========================================= */
 
 function sendMessage() {
 
@@ -114,25 +141,25 @@ function sendMessage() {
 
     if (username === "") {
 
-        alert(
-            "Te rog scrie numele tău."
-        );
-
         usernameInput.focus();
 
+        usernameInput.placeholder =
+            "Introdu numele tău";
+
         return;
+
     }
 
 
     if (text === "") {
 
-        alert(
-            "Scrie un mesaj înainte să îl trimiți."
-        );
-
         messageInput.focus();
 
+        messageInput.placeholder =
+            "Scrie un mesaj";
+
         return;
+
     }
 
 
@@ -166,7 +193,7 @@ function sendMessage() {
     );
 
 
-    /* PĂSTREAZĂ MAXIM 100 MESAJE */
+    /* PASTRAM MAXIM 100 MESAJE */
 
     if (
         chatMessages.length > 100
@@ -177,12 +204,7 @@ function sendMessage() {
     }
 
 
-    localStorage.setItem(
-        "radioReyChat",
-        JSON.stringify(
-            chatMessages
-        )
-    );
+    saveMessages();
 
 
     messageInput.value = "";
@@ -196,7 +218,9 @@ function sendMessage() {
 }
 
 
-/* BUTON TRIMITE */
+/* =========================================
+   BUTON TRIMITE
+========================================= */
 
 sendButton.addEventListener(
     "click",
@@ -204,15 +228,17 @@ sendButton.addEventListener(
 );
 
 
-/* ENTER PENTRU TRIMITERE */
+/* =========================================
+   ENTER PENTRU TRIMITERE
+========================================= */
 
 messageInput.addEventListener(
     "keydown",
     function(event) {
 
-        if (
-            event.key === "Enter"
-        ) {
+        if (event.key === "Enter") {
+
+            event.preventDefault();
 
             sendMessage();
 
@@ -222,6 +248,32 @@ messageInput.addEventListener(
 );
 
 
-/* ÎNCĂRCARE MESAJE */
+/* =========================================
+   ACTUALIZARE CHAT INTRE TAB-URI
+========================================= */
+
+window.addEventListener(
+    "storage",
+    function(event) {
+
+        if (event.key === storageKey) {
+
+            chatMessages =
+                JSON.parse(
+                    event.newValue
+                ) || [];
+
+
+            displayMessages();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   INCARCARE INITIALA
+========================================= */
 
 displayMessages();
