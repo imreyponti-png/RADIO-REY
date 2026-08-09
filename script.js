@@ -21,9 +21,9 @@ let chatMessages =
     ) || [];
 
 
-/* =========================================
+/* =========================
    PROTEJARE TEXT
-========================================= */
+========================= */
 
 function escapeHtml(text) {
 
@@ -38,9 +38,9 @@ function escapeHtml(text) {
 }
 
 
-/* =========================================
-   AFISARE MESAJE
-========================================= */
+/* =========================
+   AFIȘARE MESAJE
+========================= */
 
 function displayMessages() {
 
@@ -117,9 +117,9 @@ function displayMessages() {
 }
 
 
-/* =========================================
-   SALVARE MESAJE
-========================================= */
+/* =========================
+   SALVARE
+========================= */
 
 function saveMessages() {
 
@@ -131,9 +131,9 @@ function saveMessages() {
 }
 
 
-/* =========================================
+/* =========================
    TRIMITERE MESAJ
-========================================= */
+========================= */
 
 function sendMessage() {
 
@@ -148,9 +148,6 @@ function sendMessage() {
 
         usernameInput.focus();
 
-        usernameInput.placeholder =
-            "Introdu numele tău";
-
         return;
 
     }
@@ -159,9 +156,6 @@ function sendMessage() {
     if (text === "") {
 
         messageInput.focus();
-
-        messageInput.placeholder =
-            "Scrie un mesaj";
 
         return;
 
@@ -184,14 +178,11 @@ function sendMessage() {
 
     const newMessage = {
 
-        username:
-            username,
+        username: username,
 
-        text:
-            text,
+        text: text,
 
-        time:
-            time
+        time: time
 
     };
 
@@ -225,9 +216,9 @@ function sendMessage() {
 }
 
 
-/* =========================================
+/* =========================
    BUTON TRIMITE
-========================================= */
+========================= */
 
 sendButton.addEventListener(
     "click",
@@ -235,9 +226,9 @@ sendButton.addEventListener(
 );
 
 
-/* =========================================
-   ENTER PENTRU TRIMITERE
-========================================= */
+/* =========================
+   ENTER
+========================= */
 
 messageInput.addEventListener(
     "keydown",
@@ -255,9 +246,9 @@ messageInput.addEventListener(
 );
 
 
-/* =========================================
-   SINCRONIZARE ÎNTRE TAB-URI
-========================================= */
+/* =========================
+   SINCRONIZARE TAB-URI
+========================= */
 
 window.addEventListener(
     "storage",
@@ -266,10 +257,8 @@ window.addEventListener(
         if (event.key === storageKey) {
 
             chatMessages =
-                JSON.parse(
-                    event.newValue
-                ) || [];
-
+                JSON.parse(event.newValue)
+                || [];
 
             displayMessages();
 
@@ -279,8 +268,8 @@ window.addEventListener(
 );
 
 
-/* =========================================
-   INCARCARE INITIALA
-========================================= */
+/* =========================
+   ÎNCĂRCARE
+========================= */
 
 displayMessages();
