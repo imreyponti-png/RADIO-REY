@@ -10,7 +10,12 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>RADIO REY - Live</title>
+    <meta
+        name="description"
+        content="RADIO REY - Music, Chat și Vibe Live"
+    >
+
+    <title>RADIO REY • LIVE</title>
 
     <link
         rel="stylesheet"
@@ -23,153 +28,238 @@
 <body>
 
 
-<!-- PAGINA PRINCIPALĂ -->
+    <!-- FUNDAL DECORATIV -->
 
-<main class="container">
-
-
-    <!-- HEADER -->
-
-    <header class="header">
-
-        <div class="live-badge">
-            <span class="live-dot"></span>
-            LIVE
-        </div>
-
-        <h1>🎧 RADIO REY</h1>
-
-        <p>Music • Chat • Vibe</p>
-
-    </header>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
 
 
-    <!-- ZONA RADIO -->
+    <!-- PAGINA PRINCIPALA -->
 
-    <section class="radio-section">
-
-        <h2>📻 RADIO REY LIVE</h2>
-
-        <p class="radio-text">
-            Ascultă RADIO REY direct aici.
-        </p>
+    <main class="site-container">
 
 
-        <!-- CHENARUL RADIOULUI -->
+        <!-- HEADER -->
 
-        <div class="radio-frame">
+        <header class="site-header">
 
-            <div class="radio-frame-header">
-
-                <span class="mini-live-dot"></span>
-
-                <span>
-                    RADIO REY
-                </span>
-
+            <div class="live-badge">
+                <span class="live-dot"></span>
+                LIVE NOW
             </div>
 
 
-            <!-- PLAYER OFICIAL MYRADIOSTREAM -->
-
-            <div id="radio-player">
-
-                <script src="//myradiostream.com/embed/Reyponti"></script>
-
-            </div>
-
-        </div>
+            <h1>
+                <span class="headphones">🎧</span>
+                RADIO REY
+            </h1>
 
 
-        <p class="radio-status">
-            🔴 LIVE • Music • Chat • Vibe
-        </p>
+            <p class="tagline">
+                Music <span>•</span> Chat <span>•</span> Vibe
+            </p>
 
-    </section>
-
-
-    <!-- CHAT -->
-
-    <section class="chat">
-
-        <h2>💬 Chat Live</h2>
-
-        <p class="chat-info">
-            Vorbește cu ascultătorii RADIO REY.
-        </p>
+        </header>
 
 
-        <!-- MESAJE -->
+        <!-- CONTINUT PRINCIPAL -->
 
-        <div
-            id="messages"
-            class="messages"
-        >
-
-            <div class="welcome-message">
-
-                👋 Bine ai venit în chatul RADIO REY!
-
-            </div>
-
-        </div>
+        <section class="main-layout">
 
 
-        <!-- FORMULAR CHAT -->
+            <!-- RADIO -->
 
-        <div class="send">
+            <section class="radio-card">
 
-            <input
-                type="text"
-                id="username"
-                placeholder="Numele tău"
-                maxlength="30"
-            >
+                <div class="card-heading">
+
+                    <div>
+                        <span class="section-label">
+                            ON AIR
+                        </span>
+
+                        <h2>
+                            📻 RADIO REY LIVE
+                        </h2>
+                    </div>
 
 
-            <div class="message-row">
+                    <div class="on-air-status">
+                        <span></span>
+                        LIVE
+                    </div>
 
-                <input
-                    type="text"
-                    id="message"
-                    placeholder="Scrie un mesaj..."
-                    maxlength="300"
+                </div>
+
+
+                <!-- CHENARUL IN CARE SE DESCHIDE PAGINA RADIOULUI -->
+
+                <div class="radio-frame">
+
+                    <div class="radio-frame-top">
+
+                        <div class="frame-brand">
+
+                            <span class="frame-dot"></span>
+
+                            RADIO REY PLAYER
+
+                        </div>
+
+
+                        <span class="secure-text">
+                            LIVE STREAM
+                        </span>
+
+                    </div>
+
+
+                    <iframe
+                        id="radioIframe"
+                        src="https://reyponti.on-air.fm/free/"
+                        title="RADIO REY Live Player"
+                        allow="autoplay"
+                        scrolling="no"
+                    ></iframe>
+
+                </div>
+
+
+                <p class="radio-description">
+
+                    Ascultă RADIO REY direct din pagina noastră.
+
+                </p>
+
+            </section>
+
+
+            <!-- CHAT -->
+
+            <aside class="chat-card">
+
+                <div class="chat-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            COMMUNITY
+                        </span>
+
+                        <h2>
+                            💬 CHAT LIVE
+                        </h2>
+
+                    </div>
+
+
+                    <div class="online-count">
+
+                        <span class="online-dot"></span>
+
+                        ONLINE
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESAJE -->
+
+                <div
+                    id="messages"
+                    class="messages"
+                    aria-live="polite"
                 >
 
+                    <div class="welcome-message">
 
-                <button
-                    id="sendBtn"
-                    type="button"
-                >
-                    Trimite
-                </button>
+                        <div class="welcome-icon">
+                            👋
+                        </div>
 
+                        <strong>
+                            Bine ai venit!
+                        </strong>
+
+                        <span>
+                            Intră în conversație și salută ascultătorii RADIO REY.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ZONA DE SCRIERE -->
+
+                <div class="chat-input-area">
+
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Numele tău"
+                        maxlength="30"
+                        autocomplete="nickname"
+                    >
+
+
+                    <div class="message-input-row">
+
+                        <input
+                            type="text"
+                            id="message"
+                            placeholder="Scrie un mesaj..."
+                            maxlength="300"
+                            autocomplete="off"
+                        >
+
+
+                        <button
+                            id="sendBtn"
+                            type="button"
+                            aria-label="Trimite mesajul"
+                        >
+                            <span class="send-text">
+                                Trimite
+                            </span>
+
+                            <span class="send-icon">
+                                ➤
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="site-footer">
+
+            <div class="footer-logo">
+                🎧 RADIO REY
             </div>
 
-        </div>
+            <p>
+                © 2026 RADIO REY • Music • Chat • Vibe
+            </p>
 
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-            © 2026 RADIO REY
-        </p>
-
-        <span>
-            Music • Chat • Vibe
-        </span>
-
-    </footer>
+        </footer>
 
 
-</main>
+    </main>
 
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 
 </body>
