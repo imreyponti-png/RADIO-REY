@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -17,30 +15,17 @@
 
     <title>RADIO REY • LIVE</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
-
-
-    <!-- FUNDAL DECORATIV -->
 
     <div class="background-glow glow-one"></div>
     <div class="background-glow glow-two"></div>
 
-
-    <!-- PAGINA PRINCIPALA -->
-
     <main class="site-container">
 
-
         <!-- HEADER -->
-
         <header class="site-header">
 
             <div class="live-badge">
@@ -48,12 +33,10 @@
                 LIVE NOW
             </div>
 
-
             <h1>
                 <span class="headphones">🎧</span>
                 RADIO REY
             </h1>
-
 
             <p class="tagline">
                 Music <span>•</span> Chat <span>•</span> Vibe
@@ -62,27 +45,19 @@
         </header>
 
 
-        <!-- CONTINUT PRINCIPAL -->
-
+        <!-- RADIO + CHAT -->
         <section class="main-layout">
 
-
             <!-- RADIO -->
-
             <section class="radio-card">
 
                 <div class="card-heading">
 
                     <div>
-                        <span class="section-label">
-                            ON AIR
-                        </span>
+                        <span class="section-label">ON AIR</span>
 
-                        <h2>
-                            📻 RADIO REY LIVE
-                        </h2>
+                        <h2>📻 RADIO REY LIVE</h2>
                     </div>
-
 
                     <div class="on-air-status">
                         <span></span>
@@ -92,20 +67,15 @@
                 </div>
 
 
-                <!-- CHENARUL IN CARE SE DESCHIDE PAGINA RADIOULUI -->
-
+                <!-- CHENAR RADIO -->
                 <div class="radio-frame">
 
                     <div class="radio-frame-top">
 
                         <div class="frame-brand">
-
                             <span class="frame-dot"></span>
-
                             RADIO REY PLAYER
-
                         </div>
-
 
                         <span class="secure-text">
                             LIVE STREAM
@@ -114,64 +84,48 @@
                     </div>
 
 
-                    <iframe
-                        id="radioIframe"
-                        src="https://reyponti.on-air.fm/free/"
-                        title="RADIO REY Live Player"
-                        allow="autoplay"
-                        scrolling="no"
-                    ></iframe>
+                    <!-- PLAYER OFICIAL MYRADIOSTREAM -->
+                    <div id="radio-player">
+
+                        <script src="//myradiostream.com/embed/Reyponti"></script>
+
+                    </div>
 
                 </div>
 
 
                 <p class="radio-description">
-
                     Ascultă RADIO REY direct din pagina noastră.
-
                 </p>
 
             </section>
 
 
             <!-- CHAT -->
-
             <aside class="chat-card">
 
                 <div class="chat-header">
 
                     <div>
+                        <span class="section-label">COMMUNITY</span>
 
-                        <span class="section-label">
-                            COMMUNITY
-                        </span>
-
-                        <h2>
-                            💬 CHAT LIVE
-                        </h2>
-
+                        <h2>💬 CHAT LIVE</h2>
                     </div>
 
-
                     <div class="online-count">
-
                         <span class="online-dot"></span>
-
                         ONLINE
-
                     </div>
 
                 </div>
 
 
                 <!-- MESAJE -->
-
                 <div
                     id="messages"
                     class="messages"
                     aria-live="polite"
                 >
-
                     <div class="welcome-message">
 
                         <div class="welcome-icon">
@@ -187,14 +141,11 @@
                         </span>
 
                     </div>
-
                 </div>
 
 
-                <!-- ZONA DE SCRIERE -->
-
+                <!-- SCRIERE MESAJ -->
                 <div class="chat-input-area">
-
 
                     <input
                         type="text"
@@ -228,7 +179,6 @@
                             <span class="send-icon">
                                 ➤
                             </span>
-
                         </button>
 
                     </div>
@@ -237,12 +187,10 @@
 
             </aside>
 
-
         </section>
 
 
         <!-- FOOTER -->
-
         <footer class="site-footer">
 
             <div class="footer-logo">
@@ -255,13 +203,10 @@
 
         </footer>
 
-
     </main>
 
 
     <script src="script.js"></script>
 
-
 </body>
-
 </html>
