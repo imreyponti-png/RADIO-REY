@@ -17,7 +17,10 @@
 
     <title>RADIO REY • LIVE</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -30,13 +33,10 @@
 
     <main class="site-container">
 
-        <!-- HEADER -->
-        <header class="site-header">
 
-            <div class="live-badge">
-                <span class="live-dot"></span>
-                LIVE NOW
-            </div>
+        <!-- HEADER -->
+
+        <header class="site-header">
 
             <h1>
                 <span class="headphones">🎧</span>
@@ -44,17 +44,23 @@
             </h1>
 
             <p class="tagline">
-                Music <span>•</span> Chat <span>•</span> Vibe
+                Music
+                <span>•</span>
+                Chat
+                <span>•</span>
+                Vibe
             </p>
 
         </header>
 
 
         <!-- RADIO + CHAT -->
+
         <section class="main-layout">
 
 
             <!-- RADIO -->
+
             <section class="radio-card">
 
                 <div class="card-heading">
@@ -73,22 +79,31 @@
 
 
                     <div class="on-air-status">
+
                         <span></span>
+
                         LIVE
+
                     </div>
 
                 </div>
 
 
-                <!-- CHENAR RADIO -->
+                <!-- CHENAR PLAYER -->
+
                 <div class="radio-frame">
+
 
                     <div class="radio-frame-top">
 
                         <div class="frame-brand">
+
                             <span class="frame-dot"></span>
+
                             RADIO REY PLAYER
+
                         </div>
+
 
                         <span class="secure-text">
                             LIVE STREAM
@@ -98,10 +113,8 @@
 
 
                     <!-- PLAYER OFICIAL CASTER.FM -->
-                    <div
-                        id="radio-player"
-                        class="caster-player"
-                    >
+
+                    <div id="radio-player">
 
                         <div
                             class="cstrEmbed"
@@ -110,12 +123,76 @@
                             data-theme="dark"
                             data-color="6C2BDD"
                             data-channelId=""
-                            data-rendered="false"
                         >
-                            <a href="https://www.caster.fm">
-                                Radio Streaming
+
+                            <!--
+                                ACESTE LINKURI SUNT OBLIGATORII.
+                                NU LE ȘTERGE.
+                                NU LE ASCUNDE CU CSS.
+                            -->
+
+                            <a
+                                href="https://www.caster.fm/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Shoutcast Hosting
                             </a>
+
+                            <a
+                                href="https://www.caster.fm/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Stream Hosting
+                            </a>
+
+                            <a
+                                href="https://www.caster.fm/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Radio Server Hosting
+                            </a>
+
                         </div>
+
+                    </div>
+
+
+                    <!-- LINKURI POWERED BY VIZIBILE -->
+
+                    <div class="caster-powered-by">
+
+                        Powered by
+
+                        <a
+                            href="https://www.caster.fm/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Shoutcast Hosting
+                        </a>
+
+                        <span>•</span>
+
+                        <a
+                            href="https://www.caster.fm/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Stream Hosting
+                        </a>
+
+                        <span>•</span>
+
+                        <a
+                            href="https://www.caster.fm/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Radio Server Hosting
+                        </a>
 
                     </div>
 
@@ -130,7 +207,9 @@
 
 
             <!-- CHAT -->
+
             <aside class="chat-card">
+
 
                 <div class="chat-header">
 
@@ -148,14 +227,18 @@
 
 
                     <div class="online-count">
+
                         <span class="online-dot"></span>
+
                         ONLINE
+
                     </div>
 
                 </div>
 
 
                 <!-- MESAJE -->
+
                 <div
                     id="messages"
                     class="messages"
@@ -181,7 +264,8 @@
                 </div>
 
 
-                <!-- SCRIERE MESAJ -->
+                <!-- ZONA SCRIERE -->
+
                 <div class="chat-input-area">
 
                     <input
@@ -207,17 +291,8 @@
                         <button
                             id="sendBtn"
                             type="button"
-                            aria-label="Trimite mesajul"
                         >
-
-                            <span class="send-text">
-                                Trimite
-                            </span>
-
-                            <span class="send-icon">
-                                ➤
-                            </span>
-
+                            Trimite
                         </button>
 
                     </div>
@@ -230,6 +305,7 @@
 
 
         <!-- FOOTER -->
+
         <footer class="site-footer">
 
             <div class="footer-logo">
@@ -245,11 +321,17 @@
     </main>
 
 
+    <!-- SCRIPT OFICIAL CASTER.FM -->
+
+    <script
+        src="https://cdn.cloud.caster.fm/widgets/embed.js"
+    ></script>
+
+
     <!-- SCRIPT CHAT -->
+
     <script src="script.js"></script>
 
-    <!-- SCRIPT OFICIAL PLAYER CASTER.FM -->
-    <script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
 
 </body>
 
